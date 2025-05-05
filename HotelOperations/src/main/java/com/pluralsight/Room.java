@@ -6,7 +6,7 @@ public class Room {
     private boolean occupied;
     private boolean dirty;
 
-    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty, boolean available) {
+    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
         this.occupied = occupied;
@@ -28,7 +28,7 @@ public class Room {
     public boolean isDirty() {
         return dirty;
     }
-
+    // as long as not occupied and not dirty it will be available
     public boolean isAvailable() {
         return !occupied && !dirty;
     }

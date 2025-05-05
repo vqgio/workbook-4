@@ -6,11 +6,11 @@ public class Reservation {
     private boolean isWeekend;
     private double pricePerNight;
 
-    public Reservation(String roomType, int numberOfNights, boolean isWeekend, double pricePerNight) {
+    public Reservation(String roomType, int numberOfNights, boolean isWeekend) {
         this.roomType = roomType;
         this.numberOfNights = numberOfNights;
         this.isWeekend = isWeekend;
-        this.pricePerNight = pricePerNight;
+        setPricePerNight();
         //create a method to calculate price for night
     }
     private void setPricePerNight() {
@@ -26,7 +26,7 @@ public class Reservation {
     public String getRoomType() {
         return roomType;
     }
-    public voie setRoomType(String roomType) {
+    public void setRoomType(String roomType) {
         this.roomType = roomType;
         setPricePerNight();
     }
