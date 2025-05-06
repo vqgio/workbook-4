@@ -6,13 +6,33 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private double startTime;
 
-    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
+    public Employee(int employeeId, String name, String department, double payRate) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
         this.payRate = payRate;
-        this.hoursWorked = hoursWorked;
+        this.hoursWorked = 0;
+        this.startTime = -1;
+    }
+    public void punchIn(double time) {
+        if (startTime != -1) {
+            System.out.println(name + "is punched in.");
+            return;
+        }
+        startTime = time;
+        System.out.println(name + "punched in at " + time);
+    }
+    public void punchOut(double time) {
+        if (startTime == -1) {
+            System.out.println(name + "has not punched in yet..");
+            return;
+        }
+        double workedHours = time - startTime;
+        hoursWorked += workedHours;
+        startTime = -1;
+        System.out.println(name + " punched out at " + time + ", worked " + workedHours + " hours.");
     }
 
     public double getRegularHoursWorked() {
