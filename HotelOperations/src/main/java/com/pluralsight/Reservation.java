@@ -19,6 +19,9 @@ public class Reservation {
         } else if (roomType.equalsIgnoreCase("double")) {
             pricePerNight = 124.00;
         }
+        else {
+            throw new RuntimeException("INVALID ROOM");
+        }
         if (isWeekend) {
             pricePerNight *= 1.10; //use this to increase price by 10%
         }

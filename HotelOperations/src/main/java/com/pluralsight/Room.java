@@ -6,11 +6,16 @@ public class Room {
     private boolean occupied;
     private boolean dirty;
 
-    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
+    public Room(int numberOfBeds, double price) {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
-        this.occupied = occupied;
-        this.dirty = dirty;
+        this.occupied = false;
+        this.dirty = false;
+    }
+    public void checkIn() {
+        if (!isAvailable()) {
+            System.out.println("Room is available for check in!");
+        }
     }
 
     public int getNumberOfBeds() {
