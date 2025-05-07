@@ -5,14 +5,12 @@ public class Reservation {
     int numberOfNights;
     boolean isWeekend;
 
-    // Constructor
     public Reservation(String roomType, int numberOfNights, boolean isWeekend) {
         this.roomType = roomType;
         this.numberOfNights = numberOfNights;
         this.isWeekend = isWeekend;
     }
 
-    // Getters and Setters
     public String getRoomType() {
         return roomType;
     }
@@ -54,7 +52,7 @@ public class Reservation {
         this.isWeekend = isWeekend;
     }
     public double getReservationTotal() {
-        double total = getPrice() * numberOfNights;
-        return total;
+        double pricePerNight = getPrice() * numberOfNights;
+        return pricePerNight;
     }
 }

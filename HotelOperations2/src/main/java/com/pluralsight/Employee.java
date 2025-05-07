@@ -6,6 +6,7 @@ public class Employee {
     String department;
     double payRate;
     double hoursWorked;
+    double startTime;
 
     public Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -13,6 +14,7 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+        this.startTime = 0.0;
     }
     public String getEmployeeId() {
         return employeeId;
@@ -32,6 +34,14 @@ public class Employee {
 
     public double getHoursWorked() {
         return hoursWorked;
+    }
+    public void punchIn(double time) {
+        this.startTime = time;
+    }
+    public void punchOut(double time) {
+        double hoursThisShift = time - this.startTime;
+        this.hoursWorked = this.hoursWorked + hoursThisShift;
+        this.startTime = 0.0;
     }
     public double getRegularHours() {
         return Math.min(hoursWorked, 40.0);
