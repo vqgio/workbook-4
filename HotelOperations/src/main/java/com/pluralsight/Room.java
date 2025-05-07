@@ -14,12 +14,12 @@ public class Room {
     }
     public void checkIn() {
         if (!isAvailable()) {
-            System.out.println("Room is available for check in!");
+            System.out.println("Room is not available for check in!");
             return;
         }
         occupied = true;
         dirty = true;
-        System.out.println("Sorry, Guest is currently in room.");
+        System.out.println("Room is available.");
     }
     public void checkOut() {
         if (!occupied) {
@@ -46,10 +46,10 @@ public class Room {
 //        return price;
 //    }
 //
-//    public boolean isOccupied() {
+//   public boolean isOccupied() {
 //        return occupied;
 //    }
-//
+////
 //    public boolean isDirty() {
 //        return dirty;
 //    }
