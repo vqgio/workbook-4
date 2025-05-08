@@ -9,6 +9,7 @@ public class Main {
 
         for (int i = 0; i < 2; i++) {
             Card currentCard = deck.deal();
+            currentCard.flip();
             hand.deal(currentCard);
         }
 
