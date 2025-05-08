@@ -26,20 +26,22 @@ public class Main {
             table.add(player);
         }
         Player winner = null;
-        for(Player player: table) {
-            int value = player.getValue();
-            System.out.println("Player " + player.getName() + " value:" + value);
 
-            if(player.getValue() <= 21) {
-                if(winner == null) {
+        for(Player player: table) {
+            System.out.println("Player " + player.getName() + " has: " + player.getValue());
+
+            if(player.getValue() > 21) {
+              continue;
+            }
+            if(winner == null) {
+                winner = player;
+            }
+            else {
+                if(player.getValue() > winner.getValue()) {
                     winner = player;
                 }
-                else {
-                    if(player.getValue() > winner.getValue()) {
-                        winner = player;
-                    }
-                }
             }
+            System.out.println("\n\n");
             if (winner == null) {
                 System.out.println("What? Everybody busted!");
             } else {
